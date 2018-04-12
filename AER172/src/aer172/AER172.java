@@ -1,21 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package aer172;
 
-/**
- *
- * @author Usuario 1 DAM
- */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class AER172 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        String s = br.readLine();
+        while(s.charAt(0)!='0'){
+            boolean contI = false;
+            boolean contD = false;
+            for(int i=0; i<s.length();i++){
+                if(s.charAt(i)=='I'){
+                    contI = true;
+                }
+                if (s.charAt(i)=='D'){
+                    contD = true;
+                }
+            }
+            if(contI && contD){
+                System.out.println("ALGUNO NO COME");
+            } else {
+                System.out.println("TODOS COMEN");
+            }
+            s = br.readLine();
+        }
     }
-    
 }
